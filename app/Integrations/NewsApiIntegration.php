@@ -3,8 +3,8 @@
 namespace App\Integrations;
 
 use Illuminate\Support\Facades\Log;
-use JCobhams\NewsApi\NewsApi;
 use Carbon\Carbon;
+use jcobhams\NewsApi\NewsApi;
 
 class NewsApiIntegration
 {
