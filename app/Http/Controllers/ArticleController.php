@@ -35,7 +35,7 @@ class ArticleController extends Controller
             // Log the exception
 
             // Return error response
-            return $this->sendError('An error occurred while fetching articles', []);
+            return $this->sendError($e->getMessage() , []);
         }
     }
 }
