@@ -6,19 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preference extends Model
 {
-    
     // The attributes that are mass assignable
     protected $fillable = [
-        'preferred_sources',
-        'preferred_categories',
-        'preferred_authors',
+        'preferred_source',
+        'preferred_category',
+        'preferred_author',
     ];
 
-    // Cast to array or JSON as needed (optional)
-    protected $casts = [
-        'preferred_sources' => 'array',
-        'preferred_categories' => 'array',
-        'preferred_authors' => 'array',
-    ];
-
+    /**
+     * Define a one-to-one relationship with the Source model.
+     */
+    public function source()
+    {
+        return $this->hasOne(Source::class, 'id', 'preferred_source');
+    }
 }

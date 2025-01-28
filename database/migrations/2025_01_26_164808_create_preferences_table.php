@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->id();
-            $table->json('preferred_sources')->nullable();  // Store preferred sources as a JSON array
-            $table->json('preferred_categories')->nullable();  // Store preferred categories as a JSON array
-            $table->json('preferred_authors')->nullable();  // Store preferred authors as a JSON array
+            $table->string('preferred_source');  // Store preferred sources as a JSON array
+            $table->string('preferred_category');  // Store preferred categories as a JSON array
+            $table->string('preferred_author')->nullable();  // Store preferred authors as a JSON array
             $table->timestamps();
         });
     }
